@@ -14,7 +14,7 @@ using System.Data.Entity.Infrastructure;
 namespace ContosoUniversity.Controllers
 {
 
-	public class CourseControll : Controller
+	public class CourseController : Controller
 	{
 		
 		private SchoolContext db = new SchoolContext();
@@ -22,7 +22,7 @@ namespace ContosoUniversity.Controllers
 		public ActionResult Index(int? SelectedDepartment)
 		{
 			var departments = db.Departments.OrderBy(department => department.Name).ToList();
-			ViewBag.SelectedDepartment = new SelectList(departments, "DepartmentID", "Name", SelectedDepartment)
+			ViewBag.SelectedDepartment = new SelectList(departments, "DepartmentID", "Name", SelectedDepartment);
 			int departmentID = SelectedDepartment.GetValueOrDefault();
 
 			IQueryable<Course> courses = db.Courses
