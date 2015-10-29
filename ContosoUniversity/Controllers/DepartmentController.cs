@@ -112,7 +112,8 @@ namespace ContosoUniversity.Controllers
 			{
 				try
 				{
-					db.Entry(departmentToUpdate, fieldsToBind).OriginalValues["RowVersion"] = rowVersion;
+					db.Entry(departmentToUpdate).OriginalValues["RowVersion"] = rowVersion;
+
 					await db.SaveChangesAsync();
 					return RedirectToAction("Index");
 				}
