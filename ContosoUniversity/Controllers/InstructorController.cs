@@ -189,10 +189,10 @@ namespace ContosoUniversity.Controllers
 					ModelState.AddModelError("", "Something failed.");
 				}
 
-				PopulateAssignedCourseData(instructorToUpdate);
-				return View(instructorToUpdate);
 			}
 
+			PopulateAssignedCourseData(instructorToUpdate);
+			return View(instructorToUpdate);
 		}
 
 
