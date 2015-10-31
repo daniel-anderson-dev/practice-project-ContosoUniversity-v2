@@ -181,7 +181,7 @@ namespace ContosoUniversity.Controllers
 
 					UpdateInstructorCourses(selectedCourses, instructorToUpdate);
 					db.SaveChanges();
-					RedirectToAction("Index");
+					return RedirectToAction("Index");
 
 				}
 				catch
